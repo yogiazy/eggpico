@@ -20,8 +20,8 @@ function onConnectionLost(responseObject) {
 function onMessageArrived(message) {
     console.log("onMessageArrived:" + message.payloadString);
     let data = JSON.parse(message.payloadString);
-    temp.textContent = data.temp;
-    hum.textContent = data.hum;
+    temp.textContent = data.temp + " °C";
+    hum.textContent = data.hum + " %";
     if (data.temp >= 30 && control) {
         toggleSwitch.checked = false;
         lamp_off();
