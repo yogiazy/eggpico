@@ -1,7 +1,7 @@
 const temp = document.getElementById("temp");
 const hum = document.getElementById("hum");
 
-client = new Paho.MQTT.Client("broker.hivemq.com", Number(8884), "clientId-eggpico-app-2");
+client = new Paho.MQTT.Client("broker.hivemq.com", Number(8884), "wss://", "clientId-eggpico-app-2");
 client.onConnectionLost = onConnectionLost;
 client.onMessageArrived = onMessageArrived;
 client.connect({ onSuccess: onConnect });
