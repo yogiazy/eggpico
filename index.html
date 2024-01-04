@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <title>Egg Pico</title>
+</head>
+
+<body>
+    <div class="container">
+        <!-- header -->
+        <div class="myheader">
+            <div class="logo">
+                <img src="img/favicon.png" height="25" alt="">
+                <div>Egg Pico</div>
+            </div>
+            <div>
+                <div class="toggle-container-2">
+                    <p id="manualText">Manual</p>
+                    <label class="switch-2">
+                        <input type="checkbox" id="toggleAuto" checked>
+                        <span class="slider-2"></span>
+                    </label>
+                    <p id="autoText">Auto</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- myapp -->
+        <div class="myapp">
+            <div class="sensor">
+                <h2>Sensor Monitoring</h2>
+                <div class="data-sensor">
+                    <h3>Suhu</h3>
+                    <div id="temp" class="col-data">38 <span>°C</span></div>
+                </div>
+                <div class="data-sensor">
+                    <h3>Kelembapan</h3>
+                    <div id="hum" class="col-data">72 <span>%</span></div>
+                </div>
+            </div>
+            <div class="sensor">
+                <h2>Lamp Control</h2>
+                <div class="data-lampu">
+                    <div>
+                        <img id="lamp_on" src="img/lamp-on.png" style="display: none;" width="150" alt="">
+                        <img id="lamp_off" src="img/lamp-off.png" width="150" alt="">
+                    </div>
+                    <div class="toggle-container">
+                        <label class="switch">
+                            <input type="checkbox" id="toggleSwitch" disabled>
+                            <span class="slider"></span>
+                        </label>
+                        <p id="toggleText">OFF</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="mqttws31.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
