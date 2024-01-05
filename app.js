@@ -1,7 +1,13 @@
 const temp = document.getElementById("temp");
 const hum = document.getElementById("hum");
 
-client = new Paho.MQTT.Client("broker.hivemq.com", Number(8884), "clientId-eggpico-app-2");
+function generateRandomNumber(length) {
+    return Math.floor(Math.pow(10, length - 1) + Math.random() * 9 * Math.pow(10, length - 1));
+}
+
+const clientId = "clientId-eggpico-app-2-" + generateRandomNumber(4);
+
+client = new Paho.MQTT.Client("broker.hivemq.com", Number(8884), clientId);
 client.onConnectionLost = onConnectionLost;
 client.onMessageArrived = onMessageArrived;
 client.connect({ onSuccess: onConnect });
